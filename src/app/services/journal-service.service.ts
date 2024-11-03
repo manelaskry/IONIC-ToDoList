@@ -7,8 +7,7 @@ import { AuthServiceService } from '../auth-service.service';
 import firebase from 'firebase/compat/app';
 import { Observable } from 'rxjs';
 import { deleteDoc } from 'firebase/firestore';
-// import 'firebase/compat/firestore';
-// import firebase from "firebase/compat/app";
+import 'firebase/compat/firestore';
 
 
 export class Journal{

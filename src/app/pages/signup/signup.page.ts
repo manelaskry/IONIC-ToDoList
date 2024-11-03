@@ -26,8 +26,8 @@ export class SignupPage implements OnInit {
       contact:['',
       [
         Validators.required,
-        Validators.pattern("^[0-9]*$"),
-        Validators.minLength(10),
+        //Validators.pattern("^[0-9]*$"),
+        //Validators.minLength(10),
         // Validators.min(10)
       ]
     ],
@@ -39,7 +39,7 @@ export class SignupPage implements OnInit {
         ],
       ],
       password: ['', [
-        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-8])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
+       // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-8])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
         Validators.required,
       ],
     ],
@@ -72,7 +72,7 @@ export class SignupPage implements OnInit {
 
       if (user) {
         loading.dismiss();
-        this.router.navigate(['/home'])
+        this.router.navigate(['/login'])
       }
     } else {
       return console.log('Please provide all the required values!');

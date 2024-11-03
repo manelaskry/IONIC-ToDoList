@@ -1,22 +1,26 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-title>Journals</ion-title>
+    <ion-button slot="end" fill="clear" (click)="signOut()" style="--ion-padding-start: 0;">
+      <ion-icon name="log-out-outline" size="large"></ion-icon> 
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
+  <div id="container" style="gap: 20px; display: flex; align-items: center; font-size: 24px; color: #333; margin-left: 10px;">
+  <h1 style="font-weight: normal;">Hello,</h1>
+  <strong style="margin-top: 10px; color: #E1BEE7;">{{email}}!</strong>
+</div>
+  <ion-grid>    
     <ion-row>
-      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let journal of journals" (click)="openJournal(journal)">
-        <ion-card>
-
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let journal of journals; let i = index" (click)="openJournal(journal)">
+        <ion-card [ngStyle]="{'background-color': colors[i % colors.length]}">
           <ion-card-header>
-            <ion-card-title class="title">{{journal.title}}</ion-card-title>
-            <ion-card-subtitle  color="secondary" >06:11</ion-card-subtitle>
+            <ion-card-title class="title">{{ journal.title }}</ion-card-title>
           </ion-card-header>
-
           <ion-card-content class="content">
-            {{journal.content }}
+            {{ journal.content }}
           </ion-card-content>
         </ion-card>
       </ion-col>

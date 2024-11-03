@@ -1,3 +1,8 @@
+ion-content {
+    --background: linear-gradient(to bottom, #FFCDD2, #FFFFFF);
+    display: flex;
+    justify-content: center;
+  }
 
 .input{
     font-weight: 300;
@@ -46,7 +51,9 @@ ion-item {
     font-size: 0.8em;
         text-decoration: none;
       }
+      
 }
+
 .errorInput{
     color: red;
     font-weight: 300;

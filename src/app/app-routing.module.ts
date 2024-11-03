@@ -3,47 +3,42 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'journals',  // Redirect to journals as the new home page
     pathMatch: 'full'
   },
   {
+    path: 'journals',
+    loadChildren: () => import('./pages/journals/journals.module').then(m => m.JournalsPageModule)
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule)
   },
   {
     path: 'verify',
-    loadChildren: () => import('./pages/verify/verify.module').then( m => m.VerifyPageModule)
+    loadChildren: () => import('./pages/verify/verify.module').then(m => m.VerifyPageModule)
   },
   {
     path: 'landing',
-    loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
+    loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingPageModule)
   },
   {
     path: 'confirmation',
-    loadChildren: () => import('./pages/confirmation/confirmation.module').then( m => m.ConfirmationPageModule)
-  },
-  {
-    path: 'journals',
-    loadChildren: () => import('./pages/journals/journals.module').then( m => m.JournalsPageModule)
+    loadChildren: () => import('./pages/confirmation/confirmation.module').then(m => m.ConfirmationPageModule)
   },
   {
     path: 'journal',
-    loadChildren: () => import('./pages/journal/journal.module').then( m => m.JournalPageModule)
-  },
-  
+    loadChildren: () => import('./pages/journal/journal.module').then(m => m.JournalPageModule)
+  }
 ];
 
 @NgModule({
